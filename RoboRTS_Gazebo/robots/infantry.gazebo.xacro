@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" 
 	name="infantry_xacro">
+  <xacro:arg name="namespace_xacro" default=""/>
 
   <gazebo reference="fr_wheel_link">
     <material>Gazebo/White</material>
@@ -95,7 +96,10 @@
   <!-- position controller plugin-->
   <gazebo>
     <plugin name="mecanum_base_controller" filename="libroborts_gazebo_ros_force_based_omni_move.so">
-      <cmd_vel_topic>/cmd_vel</cmd_vel_topic>
+      
+      <robot_namespace>$(arg namespace_xacro)</robot_namespace>
+      
+      <cmd_vel_topic>cmd_vel</cmd_vel_topic>
       <odom_topic>odom</odom_topic>
       <odom_frame>odom</odom_frame>
       <odom_rate>20.0</odom_rate>
