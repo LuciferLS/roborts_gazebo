@@ -47,10 +47,10 @@
 
 
 
-  <gazebo reference="uwb_tag_link">
+  <!-- <gazebo reference="uwb_tag_link">
     <material>Gazebo/Black</material>
     <turnGravityOff>false</turnGravityOff>
-  </gazebo>
+  </gazebo> -->
   
   <gazebo reference="base_laser_link">
     <material>Gazebo/Black</material>
@@ -123,7 +123,7 @@
   <!--</plugin>-->
   <!--</gazebo>-->
 
-
+<!-- 
   <gazebo>
     <plugin name="uwb_plugin" filename="libroborts_gazebo_ros_uwb.so">
       <topic_name>uwb</topic_name>
@@ -132,7 +132,7 @@
       <gaussian_noise>0.04</gaussian_noise>
       <update_rate_hz>15.0</update_rate_hz>
     </plugin>
-  </gazebo>
+  </gazebo> -->
 
 
   <gazebo reference="imu">
