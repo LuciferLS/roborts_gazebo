@@ -23,19 +23,42 @@
     iyz="2.1083E-05"
     izz="0.32438" />
     </inertial>
+    
+    <!-- base box -->
     <collision>
     <origin
-    xyz="0 0 0"
-    rpy="0 0 0" />
+        xyz="0 0 0"
+        rpy="0 0 0" />
     <geometry>
-    <box
-    size= "0.55 0.4 0.1"
-    />
-    </geometry>
+      <box
+        size= "0.55 0.4 0.1"/>
+      </geometry>
     </collision>
+
+    <!-- short stick of the cross-->
+    <collision>
+    <origin
+        xyz="0 0 0.05"
+        rpy="0 0 0" />
+    <geometry>
+      <box
+        size= "0.1 0.4 0.15"/>
+      </geometry>
+    </collision>
+    <!-- long stick of the cross-->
+    <collision>
+    <origin
+        xyz="0 0 0.05"
+        rpy="0 0 0" />
+    <geometry>
+      <box
+        size= "0.55 0.1 0.15"/>
+      </geometry>
+    </collision>
+    
     <visual>
       <origin
-        xyz="0 0 0"
+        xyz="0 0 0.05"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -592,9 +615,7 @@
           size= "0.05 0.05 0.05"
         />
       </geometry>
-      <material
-        name="">
-        <color
+      
           rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual> -->

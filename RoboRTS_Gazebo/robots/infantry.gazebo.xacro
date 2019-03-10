@@ -2,6 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" 
 	name="infantry_xacro">
   <xacro:arg name="namespace_xacro" default=""/>
+  <xacro:arg name="visualize" default="false"/>
 
   <gazebo reference="fr_wheel_link">
     <material>Gazebo/White</material>
@@ -41,6 +42,7 @@
   <!-- materials -->
   <gazebo reference="base_link">
     <material>Gazebo/Black</material>
+    <laserRetro>700</laserRetro>
     <turnGravityOff>false</turnGravityOff>
     <!--<kinematic>1</kinematic>-->
   </gazebo>
@@ -53,14 +55,15 @@
   </gazebo> -->
   
   <gazebo reference="base_laser_link">
-    <material>Gazebo/Black</material>
+    <material>Gazebo/Gold</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
   <!-- hokuyo -->
   <gazebo reference="base_laser_link">
     <sensor type="ray" name="head_hokuyo_sensor">
       <pose>0 0 0.2 0 0 0</pose>
-      <visualize>false</visualize>
+      <!-- original value 0 0 0.2 0 0 0  -->
+      <visualize>$(arg visualize)</visualize>
       <update_rate>15</update_rate>
       <ray>
         <scan>
