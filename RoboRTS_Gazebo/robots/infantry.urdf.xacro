@@ -37,17 +37,17 @@
     <!-- collision box behind laser -->
     <collision>
     <origin
-        xyz="-0.1 0 0.2"
+        xyz="-0.1 0 0.15"
         rpy="0 0 0" />
     <geometry>
       <box
-        size= "0.2 0.1 0.25"/>
+        size= "0.2 0.1 0.3"/>
       </geometry>
     </collision>
     
     <visual>
       <origin
-        xyz="0 0 0.05"
+        xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -126,11 +126,11 @@
         <mesh
           filename="package://roborts_gazebo/meshes/br_wheel_link.STL" />
       </geometry>
-      <material
+      <!-- <material
         name="roborts_red">
         <color
           rgba="${242/255} ${38/255} ${19/255} 1" />
-      </material>
+      </material> -->
     </visual>
     <collision>
       <origin
@@ -184,7 +184,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 0 3.1416" />
       <geometry>
         <mesh
           filename="package://roborts_gazebo/meshes/bl_wheel_link.STL" />
@@ -246,7 +246,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 0 3.1416" />
       <geometry>
         <mesh
           filename="package://roborts_gazebo/meshes/fl_wheel_link.STL" />
@@ -514,7 +514,7 @@
   </link>
   <joint
     name="pitch_link_to_camera_wheel_joint"
-    type="fixed">
+    type="fixed">collision
     <origin
       xyz="0.041 0 0.049"
       rpy="0 0 0" />
@@ -569,7 +569,7 @@
     name="base_link_to_laser_joint"
     type="fixed">
     <origin
-      xyz="0 0 0.1"
+      xyz="0 0 0.15"
       rpy="0 0 0" />
     <parent
       link="base_link" />
