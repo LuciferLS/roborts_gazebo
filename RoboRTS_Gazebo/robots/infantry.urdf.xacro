@@ -126,11 +126,11 @@
         <mesh
           filename="package://roborts_gazebo/meshes/br_wheel_link.STL" />
       </geometry>
-      <!-- <material
-        name="roborts_red">
+      <material
+        name="">
         <color
-          rgba="${242/255} ${38/255} ${19/255} 1" />
-      </material> -->
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
     </visual>
     <collision>
       <origin
@@ -677,6 +677,49 @@
     <axis
       xyz="0 0 0" />
   </joint>
-
+<link
+    name="led_Link">
+    <inertial>
+      <origin
+        xyz="-0.27282 -0.063339 0.010089"
+        rpy="0 0 0" />
+      <mass
+        value="0.028183" />
+      <inertia
+        ixx="0.00037048"
+        ixy="7.803E-06"
+        ixz="9.4378E-05"
+        iyy="0.0011379"
+        iyz="-1.4266E-06"
+        izz="0.0014674" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.28244 0.063339 0.061918"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roborts_gazebo/meshes/led_link.STL" />
+      </geometry>
+      <!-- <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material> -->
+    </visual>
+  </link>
+  <joint
+    name="base_link_to_led_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="led_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
 
 </robot>

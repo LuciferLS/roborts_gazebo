@@ -3,6 +3,16 @@
 	name="infantry_xacro">
   <xacro:arg name="namespace_xacro" default=""/>
   <xacro:arg name="visualize" default="false"/>
+  <xacro:arg name="led_color" default="Red"/>
+
+  <gazebo reference="led_Link">
+    <material>Gazebo/$(arg led_color)</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+  <gazebo reference="armor_link">
+    <material>Gazebo/Black</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
 
   <gazebo reference="fr_wheel_link">
     <material>Gazebo/White</material>
