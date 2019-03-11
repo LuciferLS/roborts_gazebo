@@ -112,30 +112,18 @@
    </plugin>
  </gazebo>
 
-  <!--<gazebo>-->
-  <!--<plugin name="mecanum_base_controller" filename="libroborts_gazebo_ros_force_based_move.so">-->
-  <!--<commandTopic>/cmd_vel</commandTopic>-->
-  <!--<odometryTopic>odom</odometryTopic>-->
-  <!--<odometryFrame>odom</odometryFrame>-->
-  <!--<odometryRate>20.0</odometryRate>-->
-  <!--<robotBaseFrame>base_link</robotBaseFrame>-->
-  <!--<yaw_velocity_p_gain>500</yaw_velocity_p_gain>-->
-  <!--<x_velocity_p_gain>3000</x_velocity_p_gain>-->
-  <!--<y_velocity_p_gain>3000</y_velocity_p_gain>-->
-  <!--<publishOdometryTf>1</publishOdometryTf>-->
-  <!--</plugin>-->
-  <!--</gazebo>-->
-
-<!-- 
-  <gazebo>
-    <plugin name="uwb_plugin" filename="libroborts_gazebo_ros_uwb.so">
-      <topic_name>uwb</topic_name>
-      <frame_id>uwb</frame_id>
-      <body_name>base_link</body_name>
-      <gaussian_noise>0.04</gaussian_noise>
-      <update_rate_hz>15.0</update_rate_hz>
-    </plugin>
-  </gazebo> -->
+<gazebo>
+  <plugin name="p3d_controller" filename="libgazebo_ros_p3d.so">
+    <rpyOffsets>0 0 0</rpyOffsets>
+    <xyzOffsets>0 0 0</xyzOffsets>
+    <frameName>/map</frameName> 
+    <gaussianNoise>0.01</gaussianNoise> 
+    <topicName>gazebo_robot_pose</topicName> 
+    <bodyName>base_link</bodyName>  
+    <updateRate>50.0</updateRate> 
+     <alwaysOn>true</alwaysOn>
+  </plugin>
+</gazebo>
 
 
   <gazebo reference="imu">
