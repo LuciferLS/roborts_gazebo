@@ -570,50 +570,6 @@
           </material>
         </visual>
       </link>
-
-      <link name='Starting_BottomLeft'>
-        <pose frame=''>-0.625 -2 0 0 0 0</pose>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-        <gravity>1</gravity>
-        <collision name='Wall_BottomReload_Collision'>
-          <geometry>
-            <box>
-              <size>1 0.25 0.4</size>
-            </box>
-          </geometry>
-          <pose frame=''>0 0 0.2 0 -0 0</pose>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='Wall_BottomReload_Visual'>
-          <pose frame=''>0 0 0.2 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>1 0.25 0.4</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Wood</name>
-            </script>
-            <ambient>0.996078 0.47451 0.0196078 1</ambient>
-          </material>
-        </visual>
-      </link>
-
     </model>
 
 
