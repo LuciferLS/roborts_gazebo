@@ -699,7 +699,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://roborts_gazebo/meshes/led_link.STL" />
+          filename="package://roborts_gazebo/meshes/led_link.STL" scale="0.001 0.001 0.001" />
       </geometry>
       <!-- <material
         name="">
@@ -712,12 +712,194 @@
     name="base_link_to_led_joint"
     type="fixed">
     <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
+      xyz="-0.094 0.2825 0.105"
+      rpy="0 3.1416 1.5708" />
     <parent
       link="base_link" />
     <child
       link="led_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+  <link
+    name="front_armor_link">
+    <inertial>
+      <origin
+        xyz="-0.27282 -0.063339 0.010089"
+        rpy="0 0 0" />
+      <mass
+        value="0.028183" />
+      <inertia
+        ixx="0.00037048"
+        ixy="7.803E-06"
+        ixz="9.4378E-05"
+        iyy="0.0011379"
+        iyz="-1.4266E-06"
+        izz="0.0014674" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roborts_gazebo/meshes/armor_basic.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <!-- <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material> -->
+    </visual>
+  </link>
+  <joint
+    name="base_link_to_from_armor_joint"
+    type="fixed">
+    <origin
+      xyz="0.092 0.172 0.044"
+      rpy="0 3.1416 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_armor_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+    <link
+    name="back_armor_link">
+    <inertial>
+      <origin
+        xyz="-0.27282 -0.063339 0.010089"
+        rpy="0 0 0" />
+      <mass
+        value="0.028183" />
+      <inertia
+        ixx="0.00037048"
+        ixy="7.803E-06"
+        ixz="9.4378E-05"
+        iyy="0.0011379"
+        iyz="-1.4266E-06"
+        izz="0.0014674" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roborts_gazebo/meshes/armor_basic.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <!-- <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material> -->
+    </visual>
+  </link>
+  <joint
+    name="base_link_to_back_armor_joint"
+    type="fixed">
+    <origin
+      xyz="-0.070 -0.172 0.044"
+      rpy="3.1416 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="back_armor_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <link
+    name="left_armor_link">
+    <inertial>
+      <origin
+        xyz="-0.27282 -0.063339 0.010089"
+        rpy="0 0 0" />
+      <mass
+        value="0.028183" />
+      <inertia
+        ixx="0.00037048"
+        ixy="7.803E-06"
+        ixz="9.4378E-05"
+        iyy="0.0011379"
+        iyz="-1.4266E-06"
+        izz="0.0014674" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roborts_gazebo/meshes/armor_basic.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <!-- <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material> -->
+    </visual>
+  </link>
+  <joint
+    name="base_link_to_left_armor_joint"
+    type="fixed">
+    <origin
+      xyz="-0.157 -0.001 0.044"
+      rpy="3.1416 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_armor_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+    <link
+    name="right_armor_link">
+    <inertial>
+      <origin
+        xyz="-0.27282 -0.063339 0.010089"
+        rpy="0 0 0" />
+      <mass
+        value="0.028183" />
+      <inertia
+        ixx="0.00037048"
+        ixy="7.803E-06"
+        ixz="9.4378E-05"
+        iyy="0.0011379"
+        iyz="-1.4266E-06"
+        izz="0.0014674" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roborts_gazebo/meshes/armor_basic.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <!-- <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material> -->
+    </visual>
+  </link>
+  <joint
+    name="base_link_to_right_armor_joint"
+    type="fixed">
+    <origin
+      xyz="0.1863 -0.001 0.044"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_armor_link" />
     <axis
       xyz="0 0 0" />
   </joint>
