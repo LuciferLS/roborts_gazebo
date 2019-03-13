@@ -758,7 +758,7 @@
     name="base_link_to_from_armor_joint"
     type="fixed">
     <origin
-      xyz="0.092 0.172 0.044"
+      xyz="0.089 0.172 0.044"
       rpy="0 3.1416 0" />
     <parent
       link="base_link" />
@@ -804,7 +804,7 @@
     name="base_link_to_back_armor_joint"
     type="fixed">
     <origin
-      xyz="-0.070 -0.172 0.044"
+      xyz="-0.066 -0.172 0.044"
       rpy="3.1416 0 0" />
     <parent
       link="base_link" />
@@ -849,7 +849,7 @@
     name="base_link_to_left_armor_joint"
     type="fixed">
     <origin
-      xyz="-0.157 -0.001 0.044"
+      xyz="-0.157 -0.003 0.044"
       rpy="3.1416 0 -1.5708" />
     <parent
       link="base_link" />
@@ -894,7 +894,7 @@
     name="base_link_to_right_armor_joint"
     type="fixed">
     <origin
-      xyz="0.1863 -0.001 0.044"
+      xyz="0.1863 0.003 0.044"
       rpy="3.1416 0 1.5708" />
     <parent
       link="base_link" />
