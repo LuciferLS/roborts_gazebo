@@ -9,6 +9,29 @@
     <material>Gazebo/$(arg led_color)</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
+
+
+  <gazebo reference="right_armor_link">
+    <material>Gazebo/White</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <gazebo reference="left_armor_link">
+    <material>Gazebo/White</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+  
+  <gazebo reference="back_armor_link">
+    <material>Gazebo/White</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+
+  <gazebo reference="front_armor_link">
+    <material>Gazebo/White</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
   <gazebo reference="armor_link">
     <material>Gazebo/Black</material>
     <turnGravityOff>false</turnGravityOff>
@@ -171,7 +194,7 @@
       <camera name="head">
         <horizontal_fov>1.3962634</horizontal_fov>
         <image>
-          <width>800</width>
+          <width>1600</width>
           <height>800</height>
           <format>R8G8B8</format>
         </image>
