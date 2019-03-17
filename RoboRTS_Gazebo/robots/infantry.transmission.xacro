@@ -17,9 +17,9 @@
 <!-- Transmissions for ROS Control -->
    <xacro:transmission_block joint_name="base_link_to_yaw_joint"/>
    <xacro:transmission_block joint_name="base_link_to_pitch_joint"/>
-   <xacro:transmission_block joint_name="base_link_to_fl_wheel_joint"/>
+   <!-- <xacro:transmission_block joint_name="base_link_to_fl_wheel_joint"/>
    <xacro:transmission_block joint_name="base_link_to_fr_wheel_joint"/>
    <xacro:transmission_block joint_name="base_link_to_bl_wheel_joint"/>
-   <xacro:transmission_block joint_name="base_link_to_br_wheel_joint"/>
+   <xacro:transmission_block joint_name="base_link_to_br_wheel_joint"/> -->
    <xacro:transmission_block joint_name="pitch_link_to_camera_wheel_joint"/>
 </robot>
