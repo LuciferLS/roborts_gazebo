@@ -75,16 +75,20 @@
         <!-- visual model -->
         <visual name='visual'>
           <cast_shadows>0</cast_shadows>
+          <pose frame=''>4 2.5 0 0 0 0</pose>
           <geometry>
             <plane>
               <normal>0 0 1</normal>
-              <size>20 20</size>
+              <size>8 5</size>
             </plane>
           </geometry>
           <material>
             <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
+               <!-- <uri>file://media/materials/scripts/gazebo.material</uri>
+               <name>Gazebo/Grey</name> -->
+              <uri>file://roborts_gazebo/floor.material</uri>
+              <uri>file://roborts_gazebo/competition_field.png</uri>
+              <name>CompetitionField/Test</name>
             </script>
           </material>
         </visual>
@@ -134,7 +138,7 @@
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
+              <name>Gazebo/Grey</name>CompetitionField
             </script>
             <ambient>0.996078 0.47451 0.0196078 1</ambient>
           </material>
