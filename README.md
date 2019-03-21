@@ -20,5 +20,5 @@ Plugins parameters description in this [doc](https://github.com/KevinLADLee/Robo
 To load the floor texture, we have to provide path to gazebo resource.
 When running the simulation for the first time (or first time after the update), run the following to add the environment variable to your `.bashrc`
 ```bash
-~/.bashrc < echo "export GAZEBO_RESOURCE_PATH=${HOME}/.gazebo:${GAZEBO_RESOURCE_PATH}"
+echo "export GAZEBO_RESOURCE_PATH=${HOME}/.gazebo:${GAZEBO_RESOURCE_PATH}" >> ~/.bashrc
 ```
