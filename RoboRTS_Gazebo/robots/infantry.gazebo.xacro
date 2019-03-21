@@ -192,10 +192,10 @@
     <sensor type="camera" name="camera1">
       <update_rate>30.0</update_rate>
       <camera name="head">
-        <horizontal_fov>1.3962634</horizontal_fov>
+        <horizontal_fov>0.7280189</horizontal_fov>
         <image>
-          <width>1600</width>
-          <height>800</height>
+          <width>640</width>
+          <height>360</height>
           <format>R8G8B8</format>
         </image>
         <clip>
@@ -217,20 +217,20 @@
         <cameraName>mercure_camera</cameraName>
         <imageTopicName>image_raw</imageTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-        <frameName>camera_link_optical</frameName>
+        <frameName>camera_link</frameName>
         <!-- setting hackBaseline to anything but 0.0 will cause a misalignment
             between the gazebo sensor image and the frame it is supposed to
             be attached to -->
         <hackBaseline>0.0</hackBaseline>
-        <distortionK1>0.0</distortionK1>
-        <distortionK2>0.0</distortionK2>
+        <distortionK1>0.082613</distortionK1>
+        <distortionK2>0.043275</distortionK2>
         <distortionK3>0.0</distortionK3>
-        <distortionT1>0.0</distortionT1>
-        <distortionT2>0.0</distortionT2>
+        <distortionT1>-0.000823</distortionT1>
+        <distortionT2>0.002486</distortionT2>
         <CxPrime>0</CxPrime>
-        <Cx>0.0</Cx>
-        <Cy>0.0</Cy>
-        <focalLength>0.0</focalLength>
+        <Cx>340.780730</Cx>
+        <Cy>261.766523</Cy>
+        <focalLength>839.922884</focalLength>
       </plugin>
     </sensor>
   </gazebo>
