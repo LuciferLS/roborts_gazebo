@@ -1,4 +1,4 @@
-# ICRA2018_DJI_RM_AI_Challenge_NJUST
+# Gazebo simulation environment (modified from ICRA2018_DJI_RM_AI_Challenge_NJUST)
 This repo is a simple simulator wrapper form [`ICRA2018_DJI_RM_AI_CHALLENGE_NJUST`](https://github.com/jackychen227/ICRA2018_DJI_RM_AI_Challenge_NJUST) for single-robot RoboRTS navigation stack simulation.
 
 Special thanks for `jackychen227`.
@@ -15,3 +15,10 @@ Plugins parameters description in this [doc](https://github.com/KevinLADLee/Robo
 	• Intel® Core™ i7-8700k 
 	• NVIDIA GeForce GTX 1050
 	• OS type: 64-bit
+
+# Important
+To load the floor texture, we have to provide path to gazebo resource.
+When running the simulation for the first time (or first time after the update), run the following to add the environment variable to your `.bashrc`
+```bash
+~/.bashrc < echo "export GAZEBO_RESOURCE_PATH=${HOME}/.gazebo:${GAZEBO_RESOURCE_PATH}"
+```
