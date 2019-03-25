@@ -192,7 +192,7 @@
     <sensor type="camera" name="camera1">
       <update_rate>30.0</update_rate>
       <camera name="head">
-        <horizontal_fov>0.7280189</horizontal_fov>
+        <horizontal_fov>1.7280189</horizontal_fov>
         <image>
           <width>640</width>
           <height>360</height>
@@ -228,9 +228,9 @@
         <distortionT1>-0.000823</distortionT1>
         <distortionT2>0.002486</distortionT2>
         <CxPrime>0</CxPrime>
-        <Cx>340.780730</Cx>
-        <Cy>261.766523</Cy>
-        <focalLength>839.922884</focalLength>
+        <Cx>0</Cx>
+        <Cy>0</Cy>
+        <focalLength>0</focalLength>
       </plugin>
     </sensor>
   </gazebo>
