@@ -426,7 +426,7 @@
         iyz="-2.4468E-05"
         izz="0.0037072" />
     </inertial>
-    <visual>
+    <!-- <visual>
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
@@ -439,7 +439,7 @@
         <color
           rgba="1 1 1 1" />
       </material>
-    </visual>
+    </visual> -->
     <collision>
       <origin
         xyz="0 0 0"
@@ -514,9 +514,9 @@
   </link>
   <joint
     name="pitch_link_to_camera_wheel_joint"
-    type="fixed">collision
+    type="fixed">
     <origin
-      xyz="0.041 0 0.049"
+      xyz="0.128 0 -0.0492"
       rpy="0 0 0" />
     <parent
       link="pitch_link" />
