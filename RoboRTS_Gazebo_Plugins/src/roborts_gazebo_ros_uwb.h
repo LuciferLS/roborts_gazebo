@@ -26,7 +26,7 @@ class GazeboRosUwb : public ModelPlugin {
   void DynamicReconfigureCallback(GazeboRosUwb::UWBConfig &config,
                                                 uint32_t level);
  private:
-  gazebo::math::Vector3 ErrorModel(math::Pose pose);
+  ignition::math::Vector3 ErrorModel(math::Pose pose);
 
  private:
 

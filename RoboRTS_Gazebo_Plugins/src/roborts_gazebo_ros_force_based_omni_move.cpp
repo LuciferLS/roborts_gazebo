@@ -140,17 +140,19 @@ void GazeboRosForceBasedOmniMove::UpdateChild() {
 
     ignition::math::Vector3d angular_vel = parent_->WorldAngularVel();
 
-    double error = angular_vel.Z() - rot_;
+    //double error = angular_vel.Z() - rot_;
 
-    link_->AddTorque(ignition::math::Vector3d(0.0, 0.0, -error * torque_yaw_velocity_p_gain_));
-
+    //link_->AddTorque(ignition::math::Vector3d(0.0, 0.0, -error * torque_yaw_velocity_p_gain_));
+    link_->AddTorque(ignition::math::Vector3d(0.0, 0.0, vel_rot_pid_->Update(dt.Double(), vel_rot_, angular_vel.Z())));
     float yaw = pose.Rot().Yaw();
 
     ignition::math::Vector3d linear_vel = parent_->RelativeLinearVel();
-
-    link_->AddRelativeForce(ignition::math::Vector3d((x_ - linear_vel.X())* force_x_velocity_p_gain_,
-                                                     (y_ - linear_vel.Y())* force_y_velocity_p_gain_,
-                                                     0.0));
+    link_->AddRelativeForce(ignition::math::Vector3d(vel_x_pid_->Update(dt.Double(), vel_x_, linear_vel.X()),
+                                        vel_y_pid_->Update(dt.Double(), vel_y_, linear_vel.Y()),
+                                        0.0));
+    // link_->AddRelativeForce(ignition::math::Vector3d((x_ - linear_vel.X())* force_x_velocity_p_gain_,
+    //                                                  (y_ - linear_vel.Y())* force_y_velocity_p_gain_,
+    //                                                  0.0));
 #else
   math::Pose pose = parent_->GetWorldPose();
 
@@ -190,9 +192,18 @@ void GazeboRosForceBasedOmniMove::PublishOdometry(double dt) {
 
 #if (GAZEBO_MAJOR_VERSION >= 8)
   ignition::math::Vector3d angular_vel = parent_->RelativeAngularVel();
-    ignition::math::Vector3d linear_vel = parent_->RelativeLinearVel();
-
-    odom_transform_= odom_transform_ * this->getTransformForMotion(linear_vel.X(), angular_vel.Z(), step_time);
+  ignition::math::Vector3d linear_vel = parent_->RelativeLinearVel();
+  tf::Transform transfrom_from_motion;
+  transfrom_from_motion.setIdentity();
+  double x_change = linear_vel.X() * dt;
+  double y_change = linear_vel.Y() * dt;
+  double angle_change = angular_vel.Z() * dt;
+  transfrom_from_motion.setOrigin(tf::Vector3(x_change,
+                                              y_change,
+                                              0.0));
+  transfrom_from_motion.setRotation(tf::createQuaternionFromYaw(angle_change));
+  odom_transform_= odom_transform_ * transfrom_from_motion;
+    //odom_transform_= odom_transform_ * this->TransformForMotion(linear_vel.X(), angular_vel.Z(), step_time);
 
     tf::poseTFToMsg(odom_transform_, odom_.pose.pose);
     odom_.twist.twist.angular.z = angular_vel.Z();

@@ -20,19 +20,21 @@ catkin_package(
         LIBRARIES
 )
 
-add_library(roborts_gazebo_ros_uwb src/roborts_gazebo_ros_uwb.cpp src/roborts_gazebo_ros_uwb.h)
-target_link_libraries(roborts_gazebo_ros_uwb ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES})
+
+# add_library(roborts_gazebo_ros_uwb src/roborts_gazebo_ros_uwb.cpp src/roborts_gazebo_ros_uwb.h)
+# target_link_libraries(roborts_gazebo_ros_uwb ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES})
 
 add_library(roborts_gazebo_ros_force_based_omni_move
         src/roborts_gazebo_ros_force_based_omni_move.cpp
         src/roborts_gazebo_ros_force_based_omni_move.h
         src/pid.h
         )
+
 add_dependencies(roborts_gazebo_ros_force_based_omni_move roborts_gazebo_plugins_gencfg)
 target_link_libraries(roborts_gazebo_ros_force_based_omni_move ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES})
 
 install(TARGETS
-        roborts_gazebo_ros_uwb
+        #roborts_gazebo_ros_uwb
         roborts_gazebo_ros_force_based_omni_move
         ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
         LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
